@@ -1,0 +1,2 @@
+# softmax-function
+Softmax function was developed to to take care of issues raised with sigmoid function such as what happens when we have more than 2 variables, etc. Here I was develped a simple function that takes a set of values and return their softmax function equivalent. There are many way to approach this using Python however what I have done is to use the approach of my thinking pattern :) 
