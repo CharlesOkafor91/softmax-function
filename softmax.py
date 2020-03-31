@@ -1,15 +1,8 @@
-import numpy as np
-import math
+import torch
 
 # We will write a function that takes as input a list of numbers, and returns
 # the list of probability values given by the softmax function.
 def softmax(L):
-    SF = []
-    exp_sum = 0
-    for t in L:
-        t_exp = math.exp(t) 
-        exp_sum += t_exp #this is to sum all exponents of the values for our denomenator
-    for i in L:
-        x = (math.exp(i)/exp_sum) #softmax function of eaxh value
-        SF.append(x)
-    return SF
+    return torch.exp(L)/torch.sum(torch.exp(L), dim=1).view(-1, 1) 
+#torch.sum(torch.exp(), dim=1) this takes the exponents of all the values and sum up by column
+#.view(-1, 1) this changes the rows and columns (transpose) to enable the tensor division (matrix inverse multiplication)
