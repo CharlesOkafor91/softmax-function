@@ -2,7 +2,7 @@ import numpy as np
 import math
 
 # We will write a function that takes as input a list of numbers, and returns
-# the list of values given by the softmax function.
+# the list of probability values given by the softmax function.
 def softmax(L):
     SF = []
     exp_sum = 0
